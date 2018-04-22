@@ -1,19 +1,18 @@
 /*
- * Usage of CDK Matrix
- *
- * File:   example1.cc
- * Author: Stephen Perkins
- * Email:  stephen.perkins@utdallas.edu
+ * Abdullah Khan
+ * aik160230@utdallas.edu
+ * CS3377.501
+ * CDK File
  */
 
 #include <iostream>
 #include "cdk.h"
-
+#include "fileaccessor.h"
 
 #define MATRIX_WIDTH 4
 #define MATRIX_HEIGHT 3
 #define BOX_WIDTH 15
-#define MATRIX_NAME_STRING "Test Matrix"
+#define MATRIX_NAME_STRING "Binary File Contents"
 
 using namespace std;
 
@@ -52,7 +51,7 @@ int main()
   /*
    * Create the matrix.  Need to manually cast (const char**) to (char **)
   */
-  myMatrix = newCDKMatrix(cdkscreen, CENTER, CENTER, MATRIX_HEIGHT, MATRIX_WIDTH, MATRIX_HEIGHT, MATRIX_WIDTH,
+  myMatrix = newCDKMatrix(cdkscreen, CENTER, CENTER, MATRIX_WIDTH, MATRIX_HEIGHT, MATRIX_WIDTH, MATRIX_HEIGHT,
 			  MATRIX_NAME_STRING, (char **) rowTitles, (char **) columnTitles, boxWidths,
 				     boxTypes, 1, 1, ' ', ROW, true, true, false);
 
@@ -64,7 +63,8 @@ int main()
 
   /* Display the Matrix */
   drawCDKMatrix(myMatrix, true);
-
+  fileaccessor *accessor = new fileaccessor();
+  BinaryFileHeader *reader = accessor->readHeader("cs3377.bin"); 
   /*
    * Dipslay a message
    */
