@@ -1,7 +1,8 @@
 #
-# UTD CS3377 CDK Example
-# Dr. Perkins
-# stephen.perkins@utdallas.edu
+# Abdullah Khan
+# aik160230@utdallas.edu
+# CS3377.501
+# Program 6 Makefile
 #
 
 CXX = g++
