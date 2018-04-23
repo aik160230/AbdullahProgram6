@@ -74,7 +74,7 @@ int main()
    setCDKMatrixCell(myMatrix, 1, 1, myBuffer);
    snprintf(myBuffer, sizeof(myBuffer), "Version: %d", head.versionNumber);
    setCDKMatrixCell(myMatrix, 1, 2, myBuffer);
-   snprintf(myBuffer, sizeof(myBuffer), "NumRecords: %d", head.numRecords);
+   snprintf(myBuffer, sizeof(myBuffer), "NumRecords: %lld", (long long) head.numRecords);
    setCDKMatrixCell(myMatrix, 1, 3, myBuffer);
    fseek(fp, 16, SEEK_SET);
   /*
